@@ -49,17 +49,17 @@ if (!isTestEnvironment) {
   // Google (Gemini)
   if (process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
     addModel({
-      id: "google/gemini-1.5-flash-latest",
-      name: "Gemini 1.5 Flash",
+      id: "google/gemini-2.5-flash",
+      name: "Gemini 2.5 Flash",
       description: "Google fast multimodal",
-      model: google("gemini-1.5-flash-latest"),
+      model: google("gemini-2.5-flash"),
     });
     addModel({
-      id: "google/gemini-1.5-pro-latest",
-      name: "Gemini 1.5 Pro",
+      id: "google/gemini-2.5-pro",
+      name: "Gemini 2.5 Pro",
       description: "Google advanced reasoning",
       model: wrapLanguageModel({
-        model: google("gemini-1.5-pro-latest"),
+        model: google("gemini-2.5-pro"),
         middleware: extractReasoningMiddleware({ tagName: "think" }),
       }),
       reasoning: true,
